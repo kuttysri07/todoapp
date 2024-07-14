@@ -13,10 +13,10 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json()); //req.body
 
-app.use(express.static(path.join(__dirname,"..Client/build")))
+app.use(express.static(path.join(__dirname,"../Client/build")))
 
 if (process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname,"..Client/build")))
+    app.use(express.static(path.join(__dirname,"../Client/build")))
 }
 
 

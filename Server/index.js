@@ -21,10 +21,7 @@ const devConfig = {
 };
 
 const proConfig = {
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
+    connectionString: process.env.DATABASE_URL
 };
 
 const pool = new Pool(process.env.NODE_ENV === "production" ? proConfig : devConfig);
@@ -81,14 +78,13 @@ app.delete("/todos/:id", async (req, res) => {
 });
 
 // Serve React App
-app.use(express.static(path.join(__dirname, "../Client/build")));
 
-if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../Client/build")));
+    
     app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "../Client/build/index.html"));
     });
-}
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

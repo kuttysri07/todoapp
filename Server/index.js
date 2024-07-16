@@ -81,6 +81,8 @@ app.delete("/todos/:id", async (req, res) => {
 });
 
 // Serve React App
+app.use(express.static(path.join(__dirname, "../Client/build")));
+
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../Client/build")));
     app.get("*", (req, res) => {

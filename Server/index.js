@@ -13,11 +13,11 @@ app.use(express.json());
 
 // Connect database
 const devConfig = {
-    user: process.env.PG_USER,
-    host: process.env.PG_HOST,
-    database: process.env.PG_DATABASE,
-    password: process.env.PG_PASSWORD,
-    port: process.env.PG_PORT
+    user: process.env.PG_USER ||"postgres",
+    host: process.env.PG_HOST ||"localhost",
+    database: process.env.PG_DATABASE || "world",
+    password: process.env.PG_PASSWORD || 'kuttysri07',
+    port: process.env.PG_PORT || 5432
 };
 
 const proConfig = {

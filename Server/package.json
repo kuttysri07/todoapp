@@ -5,11 +5,11 @@
   "main": "index.js",
   "engines": {
     "node": ">=14.0.0",
-    "npm": "^7.0.0"
+    "npm": ">=7.0.0"
   },
   "scripts": {
     "start": "node index.js",
-    "build": "cd Client && npm install && npm run build"
+    "heroku-postbuild": "cd Client && npm install && npm run build"
   },
   "author": "sriram",
   "license": "ISC",

@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
+require("dotenv").config();
 const port = process.env.PORT || 5000;
 const cors = require("cors");
 const { Pool } = require('pg');
 const path = require("path");
 
-require("dotenv").config();
+
 
 // Middleware
 app.use(cors());
